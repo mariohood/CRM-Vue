@@ -8,7 +8,7 @@
   })
 
 </script>
- 
+
 <template>
   <RouterLink 
     :to="{ name: to }"
