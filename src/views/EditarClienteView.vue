@@ -1,11 +1,22 @@
 <script setup>
+  import { onMounted } from 'vue'
   import { FormKit } from '@formkit/vue'
-  import { useRouter } from 'vue-router'
+  import { useRouter, useRoute } from 'vue-router'
   import ClienteService from '../services/ClienteService'
   import RouterLink from '@/components/UI/RouterLink.vue'
   import Heading from '@/components/UI/Heading.vue'
 
 const router = useRouter()
+const route = useRoute()
+
+const { id } = route.params
+
+onMounted(() => {
+  ClienteService.obtenerCliente(id)
+  .then(({data}) => console.log(data))
+  .catch(error => console.log(error))
+})
+
 
   defineProps({
     titulo: {
@@ -14,15 +25,7 @@ const router = useRouter()
   })
 
   const handleSubmit = (data) => {
-    data.estado = 1
-    ClienteService.agregarCliente(data)
-    .then(respuesta => {
-      console.log(respuesta)
-      //Redireccionar
-      router.push({name: 'listado-clientes'})
-
-    })
-    .catch(error => console.log(error))
+  
   }
 </script>
 
