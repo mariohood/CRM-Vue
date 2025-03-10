@@ -1,16 +1,6 @@
 {
   "clientes": [
     {
-      "nombre": "Mario",
-      "apellido": "Ibanez",
-      "email": "manhattan199@hotmail.com",
-      "telefono": "(51)985-012-794",
-      "empresa": "IFRS - Campus Porto Alegre",
-      "puesto": "Dev",
-      "id": "ab39",
-      "estado": 1
-    },
-    {
       "id": "ab37",
       "nombre": "Marito",
       "apellido": "Ibanez",
@@ -18,7 +8,7 @@
       "telefono": "(51)985-012-794",
       "empresa": "IFRS - Campus Porto Alegre",
       "puesto": "Dev Full",
-      "estado": 0
+      "estado": true
     }
   ]
 }
